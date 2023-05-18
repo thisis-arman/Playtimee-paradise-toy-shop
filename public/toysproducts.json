@@ -1,150 +1,184 @@
 [
     {
-      "imageUrl": "https://example.com/teddy_bear.jpg",
-      "title": "Fluffy Teddy Bear",
+      "id": 1,
+      "imageUrl": "https://i.ibb.co/LvKHWRt/wepik-export-20230518150929-DNHX.png",
+      "title": "Teddy Bear",
       "price": 19.99,
       "ratings": 4.5,
-      "description": "A cuddly teddy bear toy for kids and teddy bear enthusiasts."
+      "description": "Soft and cuddly teddy bear toy",
+      "sellerName": "Toy World",
+      "category": "Plush Toys",
+      "quantity": 10,
+      "sellerEmail": "toyseller@example.com"
     },
     {
-      "imageUrl": "https://example.com/horse.jpg",
-      "title": "Galloping Toy Horse",
-      "price": 24.99,
-      "ratings": 4.2,
-      "description": "A toy horse that can be ridden and played with for hours of fun."
-    },
-    {
-      "imageUrl": "https://example.com/dinosaur.jpg",
-      "title": "Roaring T-Rex Dinosaur",
-      "price": 14.99,
-      "ratings": 4.8,
-      "description": "A roaring dinosaur toy that brings the prehistoric world to life."
-    },
-    {
-      "imageUrl": "https://example.com/dogs.jpg",
-      "title": "Playful Toy Dogs",
-      "price": 12.99,
-      "ratings": 4.0,
-      "description": "A set of cute toy dogs that kids can play and interact with."
-    },
-    {
-      "imageUrl": "https://example.com/cat.jpg",
-      "title": "Soft Plush Cat",
-      "price": 9.99,
-      "ratings": 4.7,
-      "description": "A soft and furry toy cat that purrs and meows when touched."
-    },
-    {
-      "imageUrl": "https://example.com/unicorn.jpg",
-      "title": "Magical Stuffed Unicorn",
+      "id": 2,
+      "imageUrl": "https://i.ibb.co/ZXS3wXZ/wepik-export-20230518151358bp-LF.png",
+      "title": "Horse Toy",
       "price": 29.99,
-      "ratings": 4.6,
-      "description": "A magical unicorn toy with a shimmering horn and colorful mane."
-    },
-    {
-      "imageUrl": "https://example.com/cows.jpg",
-      "title": "Mooing Farmyard Cows",
-      "price": 17.99,
-      "ratings": 4.3,
-      "description": "A set of toy cows that moo and move, providing farmyard fun."
-    },
-    {
-      "imageUrl": "https://example.com/penguin.jpg",
-      "title": "Waddling Plush Penguin",
-      "price": 11.99,
-      "ratings": 4.4,
-      "description": "A cute and huggable penguin toy that waddles and slides on its belly."
-    },
-    {
-      "imageUrl": "https://example.com/elephant.jpg",
-      "title": "Trunk-Swinging Elephant",
-      "price": 21.99,
-      "ratings": 4.9,
-      "description": "A toy elephant with a swinging trunk, perfect for imaginative play."
-    },
-    {
-      "imageUrl": "https://example.com/fox.jpg",
-      "title": "Sly and Soft Fox",
-      "price": 16.99,
-      "ratings": 4.1,
-      "description": "A plush toy fox with a mischievous smile, great for storytelling."
-    },
-    {
-      "imageUrl": "https://example.com/lion.jpg",
-      "title": "Roaring King of the Jungle",
-      "price": 18.99,
-      "ratings": 4.7,
-      "description": "A lion toy that roars and has a majestic mane, inspiring wild adventures."
-    },
-    {
-      "imageUrl": "https://example.com/owl.jpg",
-      "title": "Wise and Whimsical Owl",
-      "price": 13.99,
       "ratings": 4.2,
-      "description": "An owl toy with big, wise eyes and soft feathers, encouraging imagination."
+      "description": "Sturdy and realistic horse toy",
+      "sellerName": "Playful Pets",
+      "category": "Animal Toys",
+      "quantity": 5,
+      "sellerEmail": "petseller@example.com"
     },
     {
-      "imageUrl": "https://example.com/rabbit.jpg",
-      "title": "Hoppy Bunny Rabbit",
+      "id": 3,
+      "imageUrl": "https://i.ibb.co/QXjpn15/wepik-export-20230518151844k-XHf.png",
+      "title": "Dinosaur Toy",
+      "price": 24.99,
+      "ratings": 4.0,
+      "description": "Roaring and interactive dinosaur toy",
+      "sellerName": "Dino World",
+      "category": "Prehistoric Toys",
+      "quantity": 8,
+      "sellerEmail": "dinoseller@example.com"
+    },
+    {
+      "id": 4,
+      "imageUrl": "https://example.com/toy4.jpg",
+      "title": "Dogs Toy",
+      "price": 16.99,
+      "ratings": 4.8,
+      "description": "Set of cute and playful dog toys",
+      "sellerName": "Pet Paradise",
+      "category": "Animal Toys",
+      "quantity": 12,
+      "sellerEmail": "petseller@example.com"
+    },
+    {
+      "id": 5,
+      "imageUrl": "https://example.com/toy5.jpg",
+      "title": "Cat Toy",
       "price": 14.99,
       "ratings": 4.3,
-      "description": "A cute and fluffy rabbit toy that hops and brings joy to children."
+      "description": "Adorable and lifelike cat toy",
+      "sellerName": "Pet Paradise",
+      "category": "Animal Toys",
+      "quantity": 15,
+      "sellerEmail": "petseller@example.com"
     },
     {
-      "imageUrl": "https://example.com/dolphin.jpg",
-      "title": "Leaping Dolphin Friend",
+      "id": 6,
+      "imageUrl": "https://example.com/toy6.jpg",
+      "title": "Unicorn",
+      "price": 34.99,
+      "ratings": 4.6,
+      "description": "Magical and enchanting unicorn toy",
+      "sellerName": "Fantasy Dreams",
+      "category": "Mythical Creatures",
+      "quantity": 3,
+      "sellerEmail": "fantasyseller@example.com"
+    },
+    {
+      "id": 7,
+      "imageUrl": "https://example.com/toy7.jpg",
+      "title": "Cows",
+      "price": 18.99,
+      "ratings": 4.1,
+      "description": "Set of adorable and moo-ving cow toys",
+      "sellerName": "Farm Friends",
+      "category": "Animal Toys",
+      "quantity": 20,
+      "sellerEmail": "farmseller@example.com"
+    },
+    {
+      "id": 8,
+      "imageUrl": "https://example.com/toy8.jpg",
+      "title": "Penguin",
+      "price": 12.99,
+      "ratings": 4.4,
+      "description": "Cute and waddling penguin toy",
+      "sellerName": "Penguin Paradise",
+      "category": "Plush Toys",
+      "quantity": 7,
+      "sellerEmail": "penguinseller@example.com"
+    },
+    {
+      "id": 9,
+      "imageUrl": "https://example.com/toy9.jpg",
+      "title": "Elephant Toys",
+      "price": 21.99,
+      "ratings": 4.2,
+      "description": "Gentle and majestic elephant toy",
+      "sellerName": "Wild Wonders",
+      "category": "Animal Toys",
+      "quantity": 9,
+      "sellerEmail": "wildseller@example.com"
+    },
+    {
+      "id": 10,
+      "imageUrl": "https://example.com/toy10.jpg",
+      "title": "Giraffe",
+      "price": 26.99,
+      "ratings": 4.7,
+      "description": "Tall and graceful giraffe toy",
+      "sellerName": "Safari Fun",
+      "category": "Plush Toy",
+      "quantity": 6,
+      "sellerEmail": "safariseller@example.com"
+    },
+    {
+      "id": 11,
+      "imageUrl": "https://example.com/toy11.jpg",
+      "title": "Lion",
+      "price": 23.99,
+      "ratings": 4.3,
+      "description": "King of the jungle lion toy",
+      "sellerName": "Wild Wonders",
+      "category": "Animal Toys",
+      "quantity": 4,
+      "sellerEmail": "wildseller@example.com"
+    },
+    {
+      "id": 12,
+      "imageUrl": "https://example.com/toy12.jpg",
+      "title": "Turtle",
+      "price": 9.99,
+      "ratings": 4.0,
+      "description": "Slow and friendly turtle toy",
+      "sellerName": "Ocean Treasures",
+      "category": "Animal Toys",
+      "quantity": 10,
+      "sellerEmail": "oceanseller@example.com"
+    },
+    {
+      "id": 13,
+      "imageUrl": "https://example.com/toy13.jpg",
+      "title": "Rabbit",
+      "price": 13.99,
+      "ratings": 4.5,
+      "description": "Cute and hopping rabbit toy",
+      "sellerName": "Playful Pets",
+      "category": "Mythical Creatures",
+      "quantity": 8,
+      "sellerEmail": "petseller@example.com"
+    },
+    {
+      "id": 14,
+      "imageUrl": "https://example.com/toy14.jpg",
+      "title": "Panda",
+      "price": 17.99,
+      "ratings": 4.4,
+      "description": "Adorable and bamboo-munching panda toy",
+      "sellerName": "Wild Wonders",
+      "category": "Mythical Creatures",
+      "quantity": 5,
+      "sellerEmail": "wildseller@example.com"
+    },
+    {
+      "id": 15,
+      "imageUrl": "https://example.com/toy15.jpg",
+      "title": "Tiger",
       "price": 22.99,
       "ratings": 4.6,
-      "description": "A dolphin toy that leaps and swims, creating a sense of wonder and play."
-    },
-    {
-      "imageUrl": "https://example.com/giraffe.jpg",
-      "title": "Tall and Stretchy Giraffe",
-      "price": 19.99,
-      "ratings": 4.4,
-      "description": "A giraffe toy with a long neck and a friendly face, perfect for imaginative adventures."
-    },
-    {
-      "imageUrl": "https://example.com/monkey.jpg",
-      "title": "Cheeky Hanging Monkey",
-      "price": 15.99,
-      "ratings": 4.0,
-      "description": "A monkey toy that can hang from branches and playfully swing around."
-    },
-    {
-      "imageUrl": "https://example.com/koala.jpg",
-      "title": "Cuddly Koala Bear",
-      "price": 12.99,
-      "ratings": 4.5,
-      "description": "A huggable koala toy that brings the charm of the Australian wilderness."
-    },
-    {
-      "imageUrl": "https://example.com/shark.jpg",
-      "title": "Fierce Shark Fighter",
-      "price": 16.99,
-      "ratings": 4.3,
-      "description": "A shark toy with sharp teeth and a ferocious look, ready for epic battles."
-    },
-    {
-      "imageUrl": "https://example.com/panda.jpg",
-      "title": "Gentle Giant Panda",
-      "price": 20.99,
-      "ratings": 4.6,
-      "description": "A panda toy that embodies peace and tranquility, spreading love and joy."
-    },
-    {
-      "imageUrl": "https://example.com/butterfly.jpg",
-      "title": "Colorful Fluttering Butterfly",
-      "price": 8.99,
-      "ratings": 4.1,
-      "description": "A butterfly toy with vibrant wings that flutter and mesmerize young minds."
-    },
-    {
-      "imageUrl": "https://example.com/zebra.jpg",
-      "title": "Striped Zebra Explorer",
-      "price": 17.99,
-      "ratings": 4.7,
-      "description": "A zebra toy that encourages exploration and learning about wildlife."
+      "description": "Fierce and striped tiger toy",
+      "sellerName": "Wild Wonders",
+      "category": "Mythical Creatures",
+      "quantity": 7,
+      "sellerEmail": "wildseller@example.com"
     }
   ]
+  
   

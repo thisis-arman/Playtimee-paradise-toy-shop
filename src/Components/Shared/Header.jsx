@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 // import logo from "../../../public/grontho-bilash-log.png";
 import { Link } from "react-router-dom";
 
@@ -10,13 +10,19 @@ RiUserReceivedLine,
 RiUserSharedLine,
 RiShoppingCartLine,
 } from "react-icons/ri";
+import { AuthContext } from "../Provider/AuthProvider";
 
 
 
 
 const Header = () => {
-  const user= {email: "user@example.com"}
+  const {user,logOut}= useContext(AuthContext)
+  console.log(user?.displayName)
 
+  const handleLogOut =()=>{
+    logOut()
+        
+  }
   return (
     <>
    <div className="bg-gray-100 py-4">
@@ -64,25 +70,34 @@ const Header = () => {
         </div>
       </div>
      
+      {user?.email ?
+
       <div className="dropdown dropdown-end">
         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
           <div className="w-10 rounded-full">
-            <img title="" src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+            <img title={user?.displayName} src={user?.photoURL} />
           </div>
         </label>
         
         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-          <Link to='/'>
-            <a className="justify-between">
+          <Link className="justify-between" to='/'>
+           
               Profile
               {/* <span className="badge">New</span> */}
-            </a>
+           
           </Link>
-          <Link to='/'><a>Add A Toy</a></Link>
-          <Link to='/'><a>My Toy</a></Link>
-          <Link to='/'><a>Logout</a></Link>
+          <Link to='/'>Add A Toy</Link>
+          <Link to='/'>My Toy</Link>
+          <Link onClick={handleLogOut} to='/'>Logout</Link>
         </ul>
       </div>
+     :<>
+     <button className="btn btn-ghost"><Link to='login'>
+      Login
+      </Link></button>
+     </> 
+    }
+
 
     </div>
     </nav>

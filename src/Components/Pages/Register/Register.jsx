@@ -1,9 +1,10 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Register = () => {
-    const {createUser} =useContext(AuthContext)
+    const {createUser,updateUserProfile} =useContext(AuthContext)
     const [error,setError] =useState('')
     
     const handleRegister =event =>{
@@ -32,11 +33,22 @@ const Register = () => {
         }
        })
        .catch(error=>{
-        console.log(error);
-        setError(error.message);
-       })
-
-    }
+         console.log(error);
+         setError(error.message);
+        })
+        
+        updateUserProfile (name,photo)
+        .then(()=>(
+          Swal.fire({
+            title: 'Done!',
+            text: 'Profile Updated Successfully',
+            icon:'success',
+            confirmButtonText: 'Cool'
+          })
+        ))
+        .catch(error=>console.log(error));
+      }
+     
     return (
         <div>
             <div className=" p-10 min-h-screen bg-base-200 my-4">

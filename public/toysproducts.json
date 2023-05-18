@@ -1,0 +1,150 @@
+[
+    {
+      "imageUrl": "https://example.com/teddy_bear.jpg",
+      "title": "Fluffy Teddy Bear",
+      "price": 19.99,
+      "ratings": 4.5,
+      "description": "A cuddly teddy bear toy for kids and teddy bear enthusiasts."
+    },
+    {
+      "imageUrl": "https://example.com/horse.jpg",
+      "title": "Galloping Toy Horse",
+      "price": 24.99,
+      "ratings": 4.2,
+      "description": "A toy horse that can be ridden and played with for hours of fun."
+    },
+    {
+      "imageUrl": "https://example.com/dinosaur.jpg",
+      "title": "Roaring T-Rex Dinosaur",
+      "price": 14.99,
+      "ratings": 4.8,
+      "description": "A roaring dinosaur toy that brings the prehistoric world to life."
+    },
+    {
+      "imageUrl": "https://example.com/dogs.jpg",
+      "title": "Playful Toy Dogs",
+      "price": 12.99,
+      "ratings": 4.0,
+      "description": "A set of cute toy dogs that kids can play and interact with."
+    },
+    {
+      "imageUrl": "https://example.com/cat.jpg",
+      "title": "Soft Plush Cat",
+      "price": 9.99,
+      "ratings": 4.7,
+      "description": "A soft and furry toy cat that purrs and meows when touched."
+    },
+    {
+      "imageUrl": "https://example.com/unicorn.jpg",
+      "title": "Magical Stuffed Unicorn",
+      "price": 29.99,
+      "ratings": 4.6,
+      "description": "A magical unicorn toy with a shimmering horn and colorful mane."
+    },
+    {
+      "imageUrl": "https://example.com/cows.jpg",
+      "title": "Mooing Farmyard Cows",
+      "price": 17.99,
+      "ratings": 4.3,
+      "description": "A set of toy cows that moo and move, providing farmyard fun."
+    },
+    {
+      "imageUrl": "https://example.com/penguin.jpg",
+      "title": "Waddling Plush Penguin",
+      "price": 11.99,
+      "ratings": 4.4,
+      "description": "A cute and huggable penguin toy that waddles and slides on its belly."
+    },
+    {
+      "imageUrl": "https://example.com/elephant.jpg",
+      "title": "Trunk-Swinging Elephant",
+      "price": 21.99,
+      "ratings": 4.9,
+      "description": "A toy elephant with a swinging trunk, perfect for imaginative play."
+    },
+    {
+      "imageUrl": "https://example.com/fox.jpg",
+      "title": "Sly and Soft Fox",
+      "price": 16.99,
+      "ratings": 4.1,
+      "description": "A plush toy fox with a mischievous smile, great for storytelling."
+    },
+    {
+      "imageUrl": "https://example.com/lion.jpg",
+      "title": "Roaring King of the Jungle",
+      "price": 18.99,
+      "ratings": 4.7,
+      "description": "A lion toy that roars and has a majestic mane, inspiring wild adventures."
+    },
+    {
+      "imageUrl": "https://example.com/owl.jpg",
+      "title": "Wise and Whimsical Owl",
+      "price": 13.99,
+      "ratings": 4.2,
+      "description": "An owl toy with big, wise eyes and soft feathers, encouraging imagination."
+    },
+    {
+      "imageUrl": "https://example.com/rabbit.jpg",
+      "title": "Hoppy Bunny Rabbit",
+      "price": 14.99,
+      "ratings": 4.3,
+      "description": "A cute and fluffy rabbit toy that hops and brings joy to children."
+    },
+    {
+      "imageUrl": "https://example.com/dolphin.jpg",
+      "title": "Leaping Dolphin Friend",
+      "price": 22.99,
+      "ratings": 4.6,
+      "description": "A dolphin toy that leaps and swims, creating a sense of wonder and play."
+    },
+    {
+      "imageUrl": "https://example.com/giraffe.jpg",
+      "title": "Tall and Stretchy Giraffe",
+      "price": 19.99,
+      "ratings": 4.4,
+      "description": "A giraffe toy with a long neck and a friendly face, perfect for imaginative adventures."
+    },
+    {
+      "imageUrl": "https://example.com/monkey.jpg",
+      "title": "Cheeky Hanging Monkey",
+      "price": 15.99,
+      "ratings": 4.0,
+      "description": "A monkey toy that can hang from branches and playfully swing around."
+    },
+    {
+      "imageUrl": "https://example.com/koala.jpg",
+      "title": "Cuddly Koala Bear",
+      "price": 12.99,
+      "ratings": 4.5,
+      "description": "A huggable koala toy that brings the charm of the Australian wilderness."
+    },
+    {
+      "imageUrl": "https://example.com/shark.jpg",
+      "title": "Fierce Shark Fighter",
+      "price": 16.99,
+      "ratings": 4.3,
+      "description": "A shark toy with sharp teeth and a ferocious look, ready for epic battles."
+    },
+    {
+      "imageUrl": "https://example.com/panda.jpg",
+      "title": "Gentle Giant Panda",
+      "price": 20.99,
+      "ratings": 4.6,
+      "description": "A panda toy that embodies peace and tranquility, spreading love and joy."
+    },
+    {
+      "imageUrl": "https://example.com/butterfly.jpg",
+      "title": "Colorful Fluttering Butterfly",
+      "price": 8.99,
+      "ratings": 4.1,
+      "description": "A butterfly toy with vibrant wings that flutter and mesmerize young minds."
+    },
+    {
+      "imageUrl": "https://example.com/zebra.jpg",
+      "title": "Striped Zebra Explorer",
+      "price": 17.99,
+      "ratings": 4.7,
+      "description": "A zebra toy that encourages exploration and learning about wildlife."
+    }
+  ]
+  

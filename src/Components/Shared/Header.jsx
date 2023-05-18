@@ -18,19 +18,18 @@ const Header = () => {
   const user= {email: "user@example.com"}
 
   return (
-    <nav className="navbar  bg-base-100 grid grid-cols-1 gap-5 px-16 py-4 sticky top-0  w-full">
-      {/* Logo */}
+    <>
+   <div className="bg-gray-100 py-4">
+   <div className="row">
+    <div className="navbar  justify-between items-center ">
+    <div className="">
+      <Link to='/' className="btn btn-ghost normal-case text-xl">
+        <img className="w-32" src="https://i.ibb.co/TvkddBR/wepik-export-20230517174602-QZb-L.png" alt="" />
+      </Link>
+    </div>
 
-      <div className="flex gap-12 w-full">
-        <div className=" w-1/6 ">
-          <a className=" ">
-            
-            <img className="w-56" src="https://i.ibb.co/TvkddBR/wepik-export-20230517174602-QZb-L.png" alt="" />
-          </a>
-        </div>
-
-        {/* Search bar */}
-        <div className="form-control w-3/6">
+     {/* Search bar */}
+     <div className="form-control hidden md:inline-block w-1/2">
           <div className="input-group">
             <input
               type="text"
@@ -39,59 +38,58 @@ const Header = () => {
             />
             <button className="btn btn-square px-10">
               Search
-              {/* <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-              />
-            </svg> */}
             </button>
           </div>
         </div>
+        
+      <nav>
+        <button className="btn btn-ghost"><Link to='/blog'>Blogs</Link> </button>
 
-        {/* Menu */}
-
-        <div className=" menu-item  w-2/6  ml-4">
-          <ul className="flex md:flex-row  items-center sm:flex-col  px-1  ">
-            <Link className="mr-4 text-xl " to="/cart">
-              <RiShoppingCartLine className="h-8 hover-bodered w-8 pr-2 text-yellow" />{" "}
-            </Link>
-
-            {user?.email ? (
-              <>
-                <div className="flex gap-2 justify-center items-center hover:border hover:bg-gray-100 hover:rounded-md">
-                  <RiUserReceivedLine className="h-6 w-6" />
-                  <Link className="mr-12 text-xl  " to="/dashboard">
-                    Dashboard
-                  </Link>
-                </div>
-                <div className="flex gap-2 justify-center items-center hover:border hover:bg-gray-100 hover:rounded-md">
-                  <RiUserReceivedLine className="h-6 w-6" />
-                  <Link className=" text-xl  " to="/logout">
-                    Sign Out
-                  </Link>
-                </div>
-              </>
-            ) : (
-              <div className="flex gap-2 justify-center items-center hover:border hover:bg-gray-100 hover:rounded-md">
-                <RiUserReceivedLine className="h-6 w-6" />
-                <Link className="mr-12 text-xl  " to="/login">
-                  Sign in
-                </Link>
-              </div>
-            )}
-          </ul>
+    <div className="flex-none">
+      <div className="dropdown dropdown-end">
+        <label tabIndex={0} className="btn btn-ghost btn-circle">
+          <div className="indicator">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+            <span className="badge badge-sm indicator-item">8</span>
+          </div>
+        </label>
+        <div tabIndex={0} className="mt-3 card card-compact dropdown-content w-52 bg-base-100 shadow">
+          <div className="card-body">
+            <span className="font-bold text-lg">8 Items</span>
+            <span className="text-info">Subtotal: $999</span>
+            <div className="card-actions">
+              <button className="btn btn-primary btn-block">View cart</button>
+            </div>
+          </div>
         </div>
       </div>
-      <div>
+     
+      <div className="dropdown dropdown-end">
+        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+          <div className="w-10 rounded-full">
+            <img title="" src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+          </div>
+        </label>
+        
+        <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+          <Link to='/'>
+            <a className="justify-between">
+              Profile
+              {/* <span className="badge">New</span> */}
+            </a>
+          </Link>
+          <Link to='/'><a>Add A Toy</a></Link>
+          <Link to='/'><a>My Toy</a></Link>
+          <Link to='/'><a>Logout</a></Link>
+        </ul>
+      </div>
+
+    </div>
+    </nav>
+  </div>
+  </div>
+  <div className="row">
+  <div className="px-8">
         <ul className="flex">
           <div className="flex gap-1 hover:text-blue-400">
             <BiHome className="h-6 w-6" />
@@ -113,10 +111,12 @@ const Header = () => {
           </div>
         </ul>
       </div>
-    </nav>
-  
 
-       
+  </div>
+  
+   </div>
+
+  </>     
     );
 };
 

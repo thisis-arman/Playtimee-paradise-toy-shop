@@ -1,9 +1,41 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const Register = () => {
+    const {createUser} =useContext(AuthContext)
+    const [error,setError] =useState('')
+    
     const handleRegister =event =>{
-        console.log('clicked')
+        event.preventDefault();
+        const form = event.target;
+        const email =form.email.value;
+        const password =form.password.value;
+        const name =form.name.value;
+        const photo = form.photo.value;
+        const confirm = form.confirm.value;
+
+        if(password!== confirm){
+            setError("Passwords do not match");
+        }
+        createUser(email,password)
+       .then(result=>{
+        const createdUser =result.user;
+        console.log(createdUser);
+        if(createdUser){
+            Swal.fire({
+                title: 'Done!',
+                text: 'Sign Up Successfully',
+                icon: 'success',
+                confirmButtonText: 'Cool'
+              })
+        }
+       })
+       .catch(error=>{
+        console.log(error);
+        setError(error.message);
+       })
+
     }
     return (
         <div>
@@ -47,10 +79,11 @@ const Register = () => {
           <span className="label-text">Email</span>
         </label>
         <input
-          type="text"
+          type="email"
           placeholder="email"
           name="email"
           className="input bg-base-200"
+          required
         />
       </div>
       <div className="form-control">
@@ -62,6 +95,7 @@ const Register = () => {
           placeholder="password"
           name="password"
           className="input bg-base-200"
+          required
         />
       </div>
       <div className="form-control">
@@ -73,8 +107,10 @@ const Register = () => {
           placeholder="password"
           name="confirm"
           className="input bg-base-200"
+          required
         />
       </div>
+      <p className='text-red-500 font-bold'>{error}</p>
       <div className="form-control mt-6">
         <button type="submit" className="btn btn-primary">Register</button>
         <label className="label">

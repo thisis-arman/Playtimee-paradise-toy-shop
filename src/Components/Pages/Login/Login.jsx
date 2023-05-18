@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 
 const Login = () => {
+    const{signIn,handleGoogleLogin} =useContext(AuthContext)
+    
     const handleLogin =event =>{
         event.preventDefault();
        const form = event.target;
@@ -12,8 +15,17 @@ const Login = () => {
        const userInfo = {email,password}
        console.log(userInfo);
        form.reset()
+       signIn(email,password)
+       .then(result =>{
+        const loggedUser = result.user;
+        console.log(loggedUser);
+       })
+       .catch(err =>
+        console.log(err)
+               )
 
     }
+
   return (
     <div>
       <div className=" p-10 min-h-screen bg-base-200 my-4">
@@ -45,7 +57,7 @@ const Login = () => {
                   <span className="label-text">Password</span>
                 </label>
                 <input
-                  type="text"
+                  type="password"
                   placeholder="password"
                   name="password"
                   className="input bg-base-200"
@@ -61,7 +73,7 @@ const Login = () => {
               </div>
               <div className="divider">OR</div>
               <div className="flex justify-center">
-              <button className="btn btn-ghost btn-circle "><FcGoogle className="h-8 w-8 "/></button>
+              <button onClick={handleGoogleLogin} className="btn btn-ghost btn-circle "><FcGoogle className="h-8 w-8 "/></button>
               </div>
             </form>
 

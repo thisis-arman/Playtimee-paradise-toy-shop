@@ -1,7 +1,9 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import useTitle from "../../Hook/useTitle";
 
 const AddToy = () => {
+    useTitle('Add product');
   const {
     register,
     handleSubmit,

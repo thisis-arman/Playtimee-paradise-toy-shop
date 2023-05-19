@@ -1,11 +1,12 @@
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
+import useTitle from '../../../Hook/useTitle';
 
 const ProductDetails = () => {
     const products = useLoaderData()
     const {id}=useParams();
    const {price,description,quantity,category,title,imageUrl,ratings}=products;
-
+useTitle('Product Details');
     return (
         <div>
             <section className="text-gray-600 body-font overflow-hidden">

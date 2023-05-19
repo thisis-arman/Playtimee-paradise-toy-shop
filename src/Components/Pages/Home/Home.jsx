@@ -4,8 +4,10 @@ import Gallery from './HomeCompo/Gallery';
 import ShopByCategory from './HomeCompo/ShopByCategory';
 import Testimonials from './HomeCompo/Testimonials';
 import InfoBlog from './HomeCompo/InfoBlog';
+import useTitle from '../../Hook/useTitle';
 
 const Home = () => {
+    useTitle('Home')
     return (
         <div>
             <Banner/>

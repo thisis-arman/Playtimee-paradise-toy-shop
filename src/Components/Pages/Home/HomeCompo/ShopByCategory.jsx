@@ -45,6 +45,7 @@ const ShopByCategory = () => {
       <Tabs onSelect={handleTabSelect}>
         <TabList className="bg-base-200">
           {categories.map((category) => (
+            // console.log({category})
             <Tab key={category}>{category}</Tab>
           ))}
         </TabList>

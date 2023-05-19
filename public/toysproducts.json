@@ -49,9 +49,9 @@
     },
     {
       "id": 5,
-      "imageUrl": "https://example.com/toy5.jpg",
+      "imageUrl": "https://i.ibb.co/gj537hZ/wepik-export-20230519053026-L6-PN.png",
       "title": "Cat Toy",
-      "price": 14.99,
+      "price": 14.99,                                                   
       "ratings": 4.3,
       "description": "Adorable and lifelike cat toy",
       "sellerName": "Pet Paradise",
@@ -61,7 +61,7 @@
     },
     {
       "id": 6,
-      "imageUrl": "https://example.com/toy6.jpg",
+      "imageUrl": "https://i.ibb.co/7x3J3QY/view-magical-mythical-unicorn-creature.jpg?fbclid=IwAR0aC-NW8E5zzitopNxS8QuMaz5sM8c_hq3FukzfM-VMrAbxICrzQNDyoig",
       "title": "Unicorn",
       "price": 34.99,
       "ratings": 4.6,
@@ -73,7 +73,7 @@
     },
     {
       "id": 7,
-      "imageUrl": "https://example.com/toy7.jpg",
+      "imageUrl": "https://i.ibb.co/hdZVX8r/wepik-export-20230519061923-XEly.png",
       "title": "Cows",
       "price": 18.99,
       "ratings": 4.1,
@@ -85,7 +85,7 @@
     },
     {
       "id": 8,
-      "imageUrl": "https://example.com/toy8.jpg",
+      "imageUrl":"https://i.ibb.co/4NHmyxs/36190287-8388224.jpg",
       "title": "Penguin",
       "price": 12.99,
       "ratings": 4.4,

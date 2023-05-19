@@ -1,64 +1,66 @@
-import React, { useState } from 'react';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
-import data from '../../../../../public/toysproducts.json';
-import ProductsCard from './Products';
-
-
+import React, { useEffect, useState } from "react";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
+import data from "../../../../../public/toysproducts.json";
+import ProductsCard from "./Products";
 
 const ShopByCategory = () => {
-    const [selectedCategory, setSelectedCategory] = useState('');
-    console.log(selectedCategory)
-  
-    const handleTabSelect = (index) => {
-      // Get the selected category from the JSON data
-      const categories = data.map((product) => product.category);
-      setSelectedCategory(categories[index]);
-    };
-  
+  const [products, setProducts] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [filteredProducts, setFilteredProducts] = useState([]);
+
+  console.log(products, categories, selectedCategory, filteredProducts);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/toyproduct")
+      .then((res) => res.json())
+      .then((data) => setProducts(data));
+  }, []);
+  // console.log(products, data)
+
+  useEffect(() => {
+    // Get the unique categories from the data
+    const uniqueCategories = [
+      ...new Set(products.map((product) => product.category)),
+    ];
+    setCategories(uniqueCategories);
+  }, []);
+
+  useEffect(() => {
     // Filter products based on the selected category
-    const filteredProducts = selectedCategory
-      ? data.filter((product) => product.category === selectedCategory)
-      : data;
-
-     
-
-    const filteredCategory = data.category.filter((product)=>
-    
-    product.category !==selectedCategory
-    
-    )
-    return (
-      <div>
-        <h2>Shop by Category</h2>
-        <Tabs onSelect={handleTabSelect}>
-          <TabList>
-            {data.map((product) => (
-              <Tab key={product.category}>
-                {product.category }
-                </Tab>
-            ))}
-          </TabList>
-  
-          {data.map((product) => (
-            <TabPanel key={product.category}>
-              <div className="product-list grid grid-cols-1 md:grid-cols-3 gap-5">
-                {filteredProducts.map((product) => 
-                (
-                  <ProductsCard
-                  key={product.id}
-                  product={product}
-                                    
-                  ></ProductsCard>
-                  
-                ))}
-              </div>
-            </TabPanel>
-          ))}
-        </Tabs>
-      </div>
+    const filtered = products.filter(
+      (product) => product.category === selectedCategory
     );
+    setFilteredProducts(filtered);
+  }, [selectedCategory]);
+
+  const handleTabSelect = (index) => {
+    setSelectedCategory(categories[index]);
   };
-  
-  export default ShopByCategory;
-  
+
+  return (
+    <div>
+      <h2 className="text-4xl font-bold text-center my-4">Shop by Category</h2>
+      <Tabs onSelect={handleTabSelect}>
+        <TabList className="bg-base-200">
+          {categories.map((category) => (
+            <Tab key={category}>{category}</Tab>
+          ))}
+        </TabList>
+
+        {categories.map((category, index) => (
+          <TabPanel key={category}>
+            <div className="product-list grid grid-cols-1 md:grid-cols-3 gap-8 my-4">
+              {filteredProducts.map((product) => (
+                <ProductsCard key={product.id} product={product}></ProductsCard>
+              ))}
+            </div>
+          </TabPanel>
+        ))}
+      </Tabs>
+    </div>
+  );
+};
+
+export default ShopByCategory;

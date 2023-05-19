@@ -472,7 +472,10 @@ const Blogs = () => {
                     What is MongoDB aggregate and How does it works?
                   </h1>
                   <p className="leading-relaxed mb-3">
-                  MongoDB, the aggregate function is a powerful feature that allows you to perform complex data processing and analysis operations on collections. It provides a way to manipulate and transform data using a pipeline of stages.
+                    MongoDB, the aggregate function is a powerful feature that
+                    allows you to perform complex data processing and analysis
+                    operations on collections. It provides a way to manipulate
+                    and transform data using a pipeline of stages.
                   </p>
                   <div className="flex items-center flex-wrap ">
                     <a className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">

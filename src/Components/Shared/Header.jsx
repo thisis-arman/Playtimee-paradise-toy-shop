@@ -115,7 +115,7 @@ const Header = () => {
           <div className="flex gap-1 hover:text-blue-400">
             <BsShopWindow className="h-6 w-6" />
             <Link className="mr-12 text-xl  " to="/shop">
-              Shop
+              All Toy
             </Link>
           </div>
           <div className="flex gap-1 hover:text-blue-400">

@@ -7,14 +7,14 @@ const Banner = () => {
         <div id="item1" className="carousel-item w-full h-2/3 ">
           <img
             src="https://i.ibb.co/Cw6nyPt/child-having-fun-during-playtime-23-2149382696.jpg"
-            className="w-full rounded-xl h-[500px] object-cover bg-gradient-to-r from-gray-700 to-gray-200"
+            className="w-full rounded-xl h-[500px] object-cover "
           />
-          <div className="absolute top-1/2 p-10 bg-gradient-to-r from-[#413b3b54] to-gray-100">
+          <span className="absolute top-1/2 p-10 bg-gradient-to-r from-[#3f393965] to-gray-100 md:mr-20 mr-4 md:py-20 ">
             <h2 className="text-7xl font-extrabold ">
                 HAVE FUN!!
             </h2>
             <p className="text-2xl ">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum alias labore officiis nemo hic corporis ipsa? Fuga non dolorem nostrum.</p>
-          </div>
+          </span>
         </div>
         <div id="item2" className="carousel-item w-full bg-gradient-to-r from-cyan-300 to-blue-100 ">
           <img

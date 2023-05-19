@@ -9,6 +9,7 @@ import Register from "../Pages/Register/Register";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import ProductDetails from "../Pages/Home/HomeCompo/ProductDetails";
 import ProductsCard from "../Pages/Home/HomeCompo/Products";
+import AllToy from "../Pages/AllToys/AllToy";
 
 
 const router = createBrowserRouter([
@@ -27,6 +28,11 @@ const router = createBrowserRouter([
             loader:({params})=>fetch(`http://localhost:5000/toyproduct/${params.id}`)
         
 
+        },
+        {
+            path:'/shop',
+            element:<AllToy/>,
+            loader:()=>fetch('http://localhost:5000/toyproduct')
         },
         {
             path:'/blog',

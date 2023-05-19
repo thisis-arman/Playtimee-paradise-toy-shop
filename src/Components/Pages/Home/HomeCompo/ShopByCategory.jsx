@@ -7,7 +7,7 @@ import ProductsCard from "./Products";
 const ShopByCategory = () => {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("Mythical Creatures");
   const [filteredProducts, setFilteredProducts] = useState([]);
 
   console.log(products, categories, selectedCategory, filteredProducts);
@@ -43,7 +43,7 @@ const ShopByCategory = () => {
     <div>
       <h2 className="text-4xl font-bold text-center my-4">Shop by Category</h2>
       <Tabs onSelect={handleTabSelect}>
-        <TabList className="bg-base-200">
+        <TabList className="bg-base-200 text-lg font-semibold">
           {categories.map((category) => (
             // console.log({category})
             <Tab key={category}>{category}</Tab>

@@ -86,8 +86,8 @@ const Header = () => {
               {/* <span className="badge">New</span> */}
            
           </Link>
-          <Link to='/'>Add A Toy</Link>
-          <Link to='/'>My Toy</Link>
+          <Link to='/create'>Add A Toy</Link>
+          <Link to='/mytoy'>My Toy</Link>
           <Link onClick={handleLogOut} to='/'>Logout</Link>
         </ul>
       </div>

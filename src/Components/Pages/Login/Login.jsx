@@ -1,10 +1,13 @@
 import React, { useContext } from "react";
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import useTitle from "../../Hook/useTitle";
 
 const Login = () => {
+  const navigate = useNavigate()
+  const location = useLocation()
+  const from =location.state?.from?.pathname || '/';
   useTitle('Sign In')
   const { signIn, handleGoogleLogin } = useContext(AuthContext);
 
@@ -20,6 +23,7 @@ const Login = () => {
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
+        navigate(from,{replace:true})
       })
       .catch((err) => console.log(err));
   };

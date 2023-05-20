@@ -21,14 +21,14 @@ const AddToy = () => {
         className="pr-20 pl-4 py-2 bg-gray-200 block"
         type="text" 
         placeholder="Title" 
-        {...register("Title", {})} />
+        {...register("title", {})} />
 </label>
 <label htmlFor="">Seller Name
         <input
         className="pr-20 pl-4 py-2 bg-gray-200 block"
           type="text"
           placeholder="Seller Name"
-          {...register("Seller Name", {})}
+          {...register("sellerName", {})}
         />
         </label>
         
@@ -40,18 +40,18 @@ const AddToy = () => {
         className="pr-20 pl-4 py-2 bg-gray-200 block"
           type="email"
           placeholder="Seller Email"
-          {...register("Seller Email", {})}
+          {...register("sellerEmail", {})}
         />
         </label>
 <label htmlFor="">Price   
-   <input className="pr-20 pl-4 py-2 bg-gray-200 block" type="number" placeholder="Price" {...register("Price", {})} />
+   <input className="pr-20 pl-4 py-2 bg-gray-200 block" type="number" placeholder="Price" {...register("price", {})} />
    </label>
      </div>
   
 
 <div className="flex justify-between my-4 gap-5">
 <label htmlFor="">category
-        <select className="pr-20 pl-4 py-2 bg-gray-200  block" {...register("Category")}>
+        <select className="pr-20 pl-4 py-2 bg-gray-200  block" {...register("category")}>
           <option value="Animal Toys">Animal Toys</option>
           <option value="Plush Toys">Plush Toys</option>
           <option value="Mythical Creatures">Mythical Creatures</option>
@@ -65,7 +65,7 @@ const AddToy = () => {
         className="pr-20 pl-4 py-2 bg-gray-200 block"
           type="number"
           placeholder="Quanity"
-          {...register("Quanity", {})}
+          {...register("quanity", {})}
         />
         </label>
         
@@ -73,20 +73,20 @@ const AddToy = () => {
        
        <div className="flex justify-between my-4 gap-5">
        <label htmlFor="">Description 
-        <textarea className="pr-20 pl-4 py-2 bg-gray-200 block" {...register("Description", {})} />
+        <textarea className="pr-20 pl-4 py-2 bg-gray-200 block" {...register("description", {})} />
         </label>
        <label htmlFor="">Image
         <input
         className="pr-20 pl-4 py-2 bg-gray-200 block"
           type="text"
           placeholder="Image Url"
-          {...register("Image Url", {})}
+          {...register("imageUrl", {})}
         />
         </label>
         
        </div>
 
-        <input className="btn btn-accent" type="submit" value='Add Product' />
+        <input className="btn btn-accent my-4" type="submit" value='Add Product' />
       </form>
     </div>
   );

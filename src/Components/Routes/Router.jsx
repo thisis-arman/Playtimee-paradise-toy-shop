@@ -10,6 +10,7 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import ProductDetails from "../Pages/Home/HomeCompo/ProductDetails";
 import ProductsCard from "../Pages/Home/HomeCompo/Products";
 import AllToy from "../Pages/AllToys/AllToy";
+import ToyDetail from "../Pages/AllToys/ToyDetail";
 
 
 const router = createBrowserRouter([
@@ -28,6 +29,11 @@ const router = createBrowserRouter([
             loader:({params})=>fetch(`http://localhost:5000/toyproduct/${params.id}`)
         
 
+        },
+        {
+            path:'/shop/toy/:id',
+            element:<ToyDetail/>,
+            loader:({params})=>fetch(`http://localhost:5000/toyproduct/${params.id}`)
         },
         {
             path:'/shop',

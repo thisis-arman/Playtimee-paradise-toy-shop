@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import useTitle from '../../Hook/useTitle';
 
 const AllToy = () => {
@@ -74,7 +74,7 @@ const AllToy = () => {
             <td>{product.category}</td> 
             <td>{product.price}</td> 
             <td>{product.quantity}</td> 
-            <td><button className='btn btn-xs btn-outline btn-success'>Details</button></td>
+            <td><button className='btn btn-xs btn-outline btn-success'><Link to={`toy/${product._id}`}>Details</Link></button></td>
           </tr>
         ))
       }

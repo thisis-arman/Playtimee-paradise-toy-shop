@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, useLoaderData, useParams } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 
+// import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { AuthContext } from "../../../Provider/AuthProvider";
 const ProductsCard = ({ product }) => {
+  const {user} =useContext(AuthContext)
+
+  const notify = () => toast("You Can't see Details without Login");
 
   
 //   console.log(" fetching data useing loader", loaddedproducts);
@@ -22,7 +29,19 @@ console.log(product)
         <p>Ratings: {ratings}</p>
         {/* <p>{ratings}</p> */}
         <div className="card-actions justify-end">
-          <button className="btn btn-primary"><Link to={`/products/${_id}`}>Details</Link></button>
+            {(user?.email) ?<>
+          <button  className="btn btn-primary">
+              <Link to={`/products/${_id}`}>Details</Link>
+            </button>
+            </>
+            :<>
+            <button onClick={notify} className="btn btn-primary">
+              <Link to={`/products/${_id}`}>Details</Link>
+            </button>
+           
+            </>
+            }
+            <ToastContainer/>
         </div>
       </div>
     </div>

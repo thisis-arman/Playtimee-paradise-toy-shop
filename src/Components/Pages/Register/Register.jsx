@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import useTitle from "../../Hook/useTitle";
@@ -8,6 +8,7 @@ import app from "../../../Firebase/Firebase.config";
 
 const Register = () => {
   useTitle('Sign Up')
+  const navigate= useNavigate()
   // const {  updateUserProfile } = useContext(AuthContext);
   const [error, setError] = useState("");
   const auth = getAuth(app)
@@ -37,6 +38,7 @@ const Register = () => {
             confirmButtonText: "Cool",
           });
         }
+        navigate('/')
       })
       .catch((error) => {
         console.log(error);

@@ -38,6 +38,8 @@ const ShopByCategory = () => {
   const handleTabSelect = (index) => {
     setSelectedCategory(categories[index]);
   };
+  
+
 
   return (
     <div>

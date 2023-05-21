@@ -147,7 +147,7 @@ const Gallery = () => {
                   className="absolute inset-0 w-full h-full object-cover object-center"
                   src="https://i.ibb.co/WV8nJyV/wepik-export-20230518104437eq-Ju.png"
                 />
-                <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
+                 <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
                   <h2 className="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">
                     THE SUBTITLE
                   </h2>
@@ -158,7 +158,7 @@ const Gallery = () => {
                     Photo booth fam kinfolk cold-pressed sriracha leggings
                     jianbing microdosing tousled waistcoat.
                   </p>
-                </div>
+                </div> 
               </div>
             </div>
           </div>

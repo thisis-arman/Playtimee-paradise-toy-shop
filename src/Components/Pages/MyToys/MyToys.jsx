@@ -61,8 +61,9 @@ const MyToys = () => {
     <div className=" py-10 ">
       <div className="max-w-6xl mx-auto py-24">
         <h3 className="text-center mb-2 text-4xl font-semibold">My Toys</h3>
-        <p className="text-center mb-8">
-          This is my all toys products that's product i added
+        <p className="text-center text-2xl mb-8">
+          Welcome Back,<span className="font-bold">{user?.displayName}!</span> Your All Product that you've listed
+
         </p>
         <div className="my-5 text-black">
           <span className=" font-semibold text-md"> Sort By: </span>

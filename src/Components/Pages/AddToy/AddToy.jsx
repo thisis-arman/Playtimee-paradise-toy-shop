@@ -11,7 +11,7 @@ const AddToy = () => {
     formState: { errors },
   } = useForm(); 
   const onSubmit = (data) =>{ 
-    fetch('http://localhost:5000/toyproduct',{
+    fetch('https://playtime-paradise.vercel.app/toyproduct',{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

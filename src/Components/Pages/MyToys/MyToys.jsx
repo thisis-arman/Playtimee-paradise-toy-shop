@@ -2,10 +2,11 @@ import React, { useContext, useEffect, useState } from "react";
 import useTitle from "../../Hook/useTitle";
 import { AuthContext } from "../../Provider/AuthProvider";
 import MyToy from "./MyToy";
+import Swal from "sweetalert2";
 
 const MyToys = () => {
   /*  const {user} =useContext(AuthContext)
-    const url =`http://localhost:5000/toyproduct?email=${user?.email}`
+    const url =`https://playtime-paradise.vercel.app/toyproduct?email=${user?.email}`
     useEffect(()=>{
       fetch(url)
       .then(res=>res.json())
@@ -19,7 +20,7 @@ const MyToys = () => {
   useTitle("My Toys");
 
   useEffect(() => {
-    fetch(`http://localhost:1500/toyproduct?email=${user?.email}&&sort=${sortOrder}`)
+    fetch(`https://playtime-paradise.vercel.app/mytoys?email=${user?.email}&&sort=${sortOrder}`)
       .then((res) => res.json())
       .then((data) => {
         setMyToys(data);
@@ -27,6 +28,7 @@ const MyToys = () => {
   }, [user, sortOrder]);
 
   const handleDelete = (id) => {
+    console.log(id)
     Swal.fire({
       title: "Are you sure?",
       text: "You want to delete this!",
@@ -37,7 +39,7 @@ const MyToys = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/toyproduct/${id}`, {
+        fetch(`http://localhost:5000/mytoys/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -49,8 +51,22 @@ const MyToys = () => {
             setMyToys(remaining);
           });
       }
-    });
+    }); 
   };
+const handleUpdateProduct=(id)=>{
+  fetch(`https://playtime-paradise.vercel.app/mytoys/${id}`,{
+    method:'PATCH',
+    headers:{
+      'Content-Type':'application/json',
+      
+    },
+    body:JSON.stringify({status:updated})
+  })
+  .then(res=>res.json())
+  .then(data => console.log(data))
+
+}
+
 
   const handleSortOrderChange = (e) => {
     setSortOrder(e.target.innerText);
@@ -93,31 +109,24 @@ const MyToys = () => {
                 <th>Delete</th>
               </tr>
             </thead>
+
+            {/* table body */}
             <tbody>
               {myToys.map((toy,i) => (
-                <tr>
+                <tr key={toy._id}>
                   <th>{1+i}</th>
                   <td>{toy.title}</td>
                   <td>{toy.category}</td>
-                  <td onChange={handleSortOrderChange}>{parseFloat(toy?.price)}</td> 
-                  <td>{toy.quantity}</td>
+                  <td onChange={handleSortOrderChange}>$ {parseFloat(toy?.price)}</td> 
+                  <td>{toy?.quantity}</td>
                   <td>
-                    <button className="btn btn-xs btn-ghost">Update</button>
+                    <button onClick={()=>handleUpdateProduct(toy?._id)} className="btn btn-xs btn-ghost">Update</button>
                   </td>
                   <td>
                     <button onClick={()=>handleDelete(toy._id)} className="btn btn-xs btn-warning">Delete</button>
                   </td>
                 </tr>
               ))}
-
-              {/*  {myToys.map((toy, i) => (
-                  <MyToy
-                    key={toy._id}
-                    toy={toy}
-                    index={i}
-                    handleDelete={handleDelete}
-                  />
-                ))} */}
             </tbody>
           </table>
         </div>

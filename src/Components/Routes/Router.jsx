@@ -27,19 +27,19 @@ const router = createBrowserRouter([
         {
             path:'/products/:id',
             element:<PrivateRoute><ProductDetails/></PrivateRoute>,
-            loader:({params})=>fetch(`http://localhost:1500/toyproduct/${params.id}`)
+            loader:({params})=>fetch(`https://playtime-paradise.vercel.app/toyproduct/${params.id}`)
         
 
         },
         {
             path:'/shop/toy/:id',
             element:<PrivateRoute><ToyDetail/></PrivateRoute>,
-            loader:({params})=>fetch(`http://localhost:1500/toyproduct/${params.id}`)
+            loader:({params})=>fetch(`https://playtime-paradise.vercel.app/toyproduct/${params.id}`)
         },
         {
             path:'/shop',
             element:<AllToy/>,
-            loader:()=>fetch('http://localhost:1500/toyproduct')
+            loader:()=>fetch('https://playtime-paradise.vercel.app/toyproduct')
         },
         {
             path:'/blog',

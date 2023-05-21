@@ -9,11 +9,11 @@ const Banner = () => {
             src="https://i.ibb.co/Cw6nyPt/child-having-fun-during-playtime-23-2149382696.jpg"
             className="w-full rounded-xl h-[500px] object-cover "
           />
-          <span className="absolute top-1/2 p-10 bg-gradient-to-r from-[#3f393965] to-gray-100 md:mr-20 mr-4 md:py-20 ">
+          <span className="absolute top-1/2 p-8 bg-gradient-to-r from-[#3f393965] to-gray-100 md:mr-20 mr-4 md:py-20 ">
             <h2 className="text-7xl font-extrabold ">
                 HAVE FUN!!
             </h2>
-            <p className="text-2xl ">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum alias labore officiis nemo hic corporis ipsa? Fuga non dolorem nostrum.</p>
+            <p className="text-2xl ">Let your imagination soar as you embark on a journey through our magical aisles. Experience the thrill of discovering the perfect toy that will light up your little one's eyes and create cherished memories that will last a lifetime.</p>
           </span>
         </div>
         <div id="item2" className="carousel-item w-full bg-gradient-to-r from-cyan-300 to-blue-100 ">

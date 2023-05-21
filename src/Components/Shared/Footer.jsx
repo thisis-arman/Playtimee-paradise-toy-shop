@@ -8,7 +8,9 @@ const Footer = () => {
 
     <div className="items-center flex flex-col grid-flow-col">
    <img className='w-52' src="https://i.ibb.co/TvkddBR/wepik-export-20230517174602-QZb-L.png" alt="" />
-    <p>ACME Industries Ltd. <br/>Providing reliable tech since 1992</p>
+    <p>ACME Industries Ltd. <br/>Providing reliable tech since 1992 <br />
+    Contact: 0181004302 <br />
+    email: info@paradise.com</p>
   </div> 
 
   <div>

@@ -1,6 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
+import 'aos/dist/aos.css';
+import Aos from "aos";
+
 
 const Gallery = () => {
+
+  useEffect(() => {
+    Aos.init();
+  }, [])
+
   return (
     <div>
       <section className="text-gray-600 body-font">
@@ -19,6 +27,7 @@ const Gallery = () => {
             <div className="lg:w-1/3 sm:w-1/2 p-4">
               <div className="flex relative">
                 <img
+                data-aos="fade-left"
                   alt="gallery"
                   className="absolute inset-0 w-full h-full object-cover object-center"
                   src="https://i.ibb.co/S6zfBxP/wepik-export-20230518105506ar-OT.png"
@@ -41,6 +50,7 @@ const Gallery = () => {
             <div className="lg:w-1/3 sm:w-1/2 p-4">
               <div className="flex relative">
                 <img
+                data-aos="fade-left"
                   alt="gallery"
                   className="absolute inset-0 w-full h-full object-cover object-center"
                   src="https://i.ibb.co/8PFgsK9/wepik-export-2023051808561574-Cx.png"
@@ -63,6 +73,7 @@ const Gallery = () => {
             <div className="lg:w-1/3 sm:w-1/2 p-4">
               <div className="flex relative">
                 <img
+                data-aos="fade-left"
                   alt="gallery"
                   className="absolute inset-0 w-full h-full object-cover object-center"
                   src="https://i.ibb.co/z5CwVm4/wepik-export-20230518103121v-Z1i.png"
@@ -85,6 +96,7 @@ const Gallery = () => {
             <div className="lg:w-1/3 sm:w-1/2 p-4">
               <div className="flex relative">
                 <img
+                data-aos="fade-left"
                   alt="gallery"
                   className="absolute inset-0 w-full h-full object-cover object-center"
                   src="https://i.ibb.co/vXpcYyD/wepik-export-2023051810401941ra.png"
@@ -107,6 +119,7 @@ const Gallery = () => {
             <div className="lg:w-1/3 sm:w-1/2 p-4">
               <div className="flex relative">
                 <img
+                data-aos="fade-left"
                   alt="gallery"
                   className="absolute inset-0 w-full h-full object-cover object-center"
                   src="https://i.ibb.co/X5Tn5Ry/wepik-export-20230518104328i-KLh.png"
@@ -129,6 +142,7 @@ const Gallery = () => {
             <div className="lg:w-1/3 sm:w-1/2 p-4">
               <div className="flex relative">
                 <img
+                data-aos="fade-left"
                   alt="gallery"
                   className="absolute inset-0 w-full h-full object-cover object-center"
                   src="https://i.ibb.co/WV8nJyV/wepik-export-20230518104437eq-Ju.png"

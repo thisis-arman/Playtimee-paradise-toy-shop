@@ -80,15 +80,15 @@ const Header = () => {
         </label>
         
         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-          <Link className="justify-between" to='/'>
+          <Link className="justify-between py-2 bg-gray-100 hover:bg-gray-200 px-2" to='/'>
            
               Profile
               {/* <span className="badge">New</span> */}
            
           </Link>
-          <Link to='/create'>Add A Toy</Link>
-          <Link to='/mytoy'>My Toy</Link>
-          <Link onClick={handleLogOut} to='/'>Logout</Link>
+          <Link className="py-2 px-2 bg-gray-100 hover:bg-gray-200" to='/create'>Add A Toy</Link>
+          <Link className="py-2 px-2 bg-gray-100 hover:bg-gray-200" to='/mytoys'>My Toy</Link>
+          <Link className="py-2 px-2 bg-gray-100 hover:bg-gray-200" onClick={handleLogOut} to='/'>Logout</Link>
         </ul>
       </div>
      :<>
@@ -106,24 +106,24 @@ const Header = () => {
   <div className="row">
   <div className="px-8">
         <ul className="flex">
-          <div className="flex gap-1 hover:text-blue-400">
+          {/* <div className="flex gap-1 hover:text-blue-400"> */}
+            <Link className="mr-12 text-xl flex gap-1 hover:text-blue-400  "  to="/">
             <BiHome className="h-6 w-6" />
-            <Link className="mr-12 text-xl  " to="/">
               <span> Home</span>
             </Link>
-          </div>
-          <div className="flex gap-1 hover:text-blue-400">
+          {/* </div> */}
+          {/* <div title="all toys" className="flex gap-1 hover:text-blue-400"> */}
+            <Link className="mr-12 text-xl flex gap-1 hover:text-blue-400  "  to="/shop">
             <BsShopWindow className="h-6 w-6" />
-            <Link className="mr-12 text-xl  " to="/shop">
-              All Toy
+              <p>Toys</p>
             </Link>
-          </div>
-          <div className="flex gap-1 hover:text-blue-400">
+          {/* </div> */}
+          {/* <div className="flex gap-1 hover:text-blue-400"> */}
+            <Link className="mr-12 text-xl flex gap-1 hover:text-blue-400  " to="/blog">
             <RiFileListLine className="h-6 w-6" />
-            <Link className="mr-12 text-xl  " to="/blog">
               Categories
             </Link>
-          </div>
+          {/* </div> */}
         </ul>
       </div>
 

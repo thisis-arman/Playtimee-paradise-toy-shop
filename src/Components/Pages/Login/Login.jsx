@@ -1,15 +1,19 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import useTitle from "../../Hook/useTitle";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import app from "../../../Firebase/Firebase.config";
 
 const Login = () => {
+  const auth =getAuth(app)
   const navigate = useNavigate()
   const location = useLocation()
   const from =location.state?.from?.pathname || '/';
   useTitle('Sign In')
-  const { signIn, handleGoogleLogin } = useContext(AuthContext);
+  const {  handleGoogleLogin } = useContext(AuthContext);
+  const [error ,setError]=useState('')
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -19,13 +23,15 @@ const Login = () => {
     const userInfo = { email, password };
     console.log(userInfo);
     form.reset();
-    signIn(email, password)
+    signInWithEmailAndPassword(auth,email, password)
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
         navigate(from,{replace:true})
       })
-      .catch((err) => console.log(err));
+      .catch((err) => 
+      setError(err.message)
+      );
   };
 
   return (
@@ -64,6 +70,7 @@ const Login = () => {
                   className="input bg-base-200"
                 />
               </div>
+              <p className="text-red-500">{error}</p>
               <div className="form-control mt-6">
                 <button type="submit" className="btn btn-primary">
                   Login

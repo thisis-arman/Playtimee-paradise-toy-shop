@@ -28,7 +28,7 @@ const AuthProvider = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
-  const logOut = (auth) => {
+  const logOut = () => {
     setLoading(true);
     return signOut(auth);
   };
@@ -37,7 +37,7 @@ const AuthProvider = ({ children }) => {
     return signInWithPopup(auth, googleProvider);
   };
 
-  const updateUserProfile = (name, photo) => {
+  const updateUserProfile = (user,name, photo) => {
     return updateProfile(user, {
       displayName: name,
       photoURL: photo,
@@ -48,6 +48,7 @@ const AuthProvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, (loggedUser) => {
       console.log("logged in user inside the auth state observer", loggedUser);
       setUser(loggedUser);
+      setLoading(false)
     });
     return () => {
       unsubscribe();

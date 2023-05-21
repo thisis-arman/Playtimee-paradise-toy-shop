@@ -3,13 +3,17 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import useTitle from "../../Hook/useTitle";
+import { createUserWithEmailAndPassword, getAuth, updateProfile } from "firebase/auth";
+import app from "../../../Firebase/Firebase.config";
 
 const Register = () => {
   useTitle('Sign Up')
-  const { createUser, updateUserProfile } = useContext(AuthContext);
+  // const {  updateUserProfile } = useContext(AuthContext);
   const [error, setError] = useState("");
+  const auth = getAuth(app)
 
   const handleRegister = (event) => {
+    
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
@@ -21,7 +25,7 @@ const Register = () => {
     if (password !== confirm) {
       setError("Passwords do not match");
     }
-    createUser(email, password)
+    createUserWithEmailAndPassword(auth,email, password)
       .then((result) => {
         const createdUser = result.user;
         console.log(createdUser);
@@ -38,19 +42,15 @@ const Register = () => {
         console.log(error);
         setError(error.message);
       });
-
-    updateUserProfile(name, photo)
-      .then(() =>
-        Swal.fire({
-          title: "Done!",
-          text: "Profile Updated Successfully",
-          icon: "success",
-          confirmButtonText: "Cool",
-        })
-      )
+    
+    updateProfile(user,{
+      displayName:name, 
+      photoURL :photo,
+    })
+      .then(() =>console.log('updated') )
       .catch((error) => console.log(error));
-  };
-
+  }; 
+ 
   return (
     <div>
       <div className=" p-10 min-h-screen bg-base-200 my-4">

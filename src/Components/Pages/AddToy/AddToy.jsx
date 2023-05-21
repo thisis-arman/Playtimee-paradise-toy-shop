@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import useTitle from "../../Hook/useTitle";
+import Swal from "sweetalert2";
 
 const AddToy = () => {
     useTitle('Add product');
@@ -8,14 +9,40 @@ const AddToy = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
-  const onSubmit = (data) => console.log(data);
+  } = useForm(); 
+  const onSubmit = (data) =>{ 
+    fetch('http://localhost:5000/toyproduct',{
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+    .then(res=>res.json())
+    .then(data =>{
+
+      console.log(data)
+      if(data.insertedId){
+        Swal.fire({
+          title: 'Success!',
+          text: 'Product Added Successfully!',
+          icon: 'success',
+          confirmButtonText: 'Cool'
+        })
+      }
+    }
+    )
+      
+  }
   console.log(errors);
+ 
 
   return (
-    <div className="md:p-20 shadow-2xl bg-base-200 my-4 md:w-2/3 border">
+    <div className="md:p-20 flex mx-auto shadow-2xl bg-base-200 my-4  border">
+      <div className="flex mx-auto">
       <form onSubmit={handleSubmit(onSubmit)}>
-<div className="flex justify-between my-4 gap-5">
+      <h2 className="text-3xl font-bold mb-8 text-center ">ADD NEW PRODUCT__</h2>
+<div className="md:flex justify-between my-4 gap-5">
 <label >Title
         <input 
         className="pr-20 pl-4 py-2 bg-gray-200 block"
@@ -34,7 +61,7 @@ const AddToy = () => {
         
 </div>
      
-     <div className="flex justify-between my-4 gap-5">
+     <div className="md:flex justify-between my-4 gap-5">
      <label htmlFor="">Seller Email
         <input
         className="pr-20 pl-4 py-2 bg-gray-200 block"
@@ -49,7 +76,7 @@ const AddToy = () => {
      </div>
   
 
-<div className="flex justify-between my-4 gap-5">
+<div className="md:flex justify-between my-4 gap-5">
 <label htmlFor="">category
         <select className="pr-20 pl-4 py-2 bg-gray-200  block" {...register("category")}>
           <option value="Animal Toys">Animal Toys</option>
@@ -71,7 +98,7 @@ const AddToy = () => {
         
 </div>
        
-       <div className="flex justify-between my-4 gap-5">
+       <div className="md:flex justify-between my-4 gap-5">
        <label htmlFor="">Description 
         <textarea className="pr-20 pl-4 py-2 bg-gray-200 block" {...register("description", {})} />
         </label>
@@ -86,10 +113,14 @@ const AddToy = () => {
         
        </div>
 
-        <input className="btn btn-accent my-4" type="submit" value='Add Product' />
+        <div className="flex justify-center ">
+        <input className="btn btn-accent my-4 w-full" type="submit" value='Add Product' />
+        </div>
       </form>
+      </div>
     </div>
   );
+
 };
 
 export default AddToy;

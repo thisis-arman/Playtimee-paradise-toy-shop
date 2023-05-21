@@ -69,11 +69,11 @@ const AllToy = () => {
         limitedProducts.map((product,i) => (
           <tr key={product.id}>
             <th scope="row">{1+i}</th> 
-            <td>{product.title}</td> 
-            <td>{product.sellerName}</td> 
-            <td>{product.category}</td> 
-            <td>{product.price}</td> 
-            <td>{product.quantity}</td> 
+            <td>{product?.title}</td> 
+            <td>{product?.sellerName}</td> 
+            <td>{product?.category}</td> 
+            <td>${product?.price}</td> 
+            <td>{product?.quantity}</td> 
             <td><button className='btn btn-xs btn-outline btn-success'><Link to={`toy/${product._id}`}>Details</Link></button></td>
           </tr>
         ))

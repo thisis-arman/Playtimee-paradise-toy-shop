@@ -5,9 +5,10 @@ import "react-tabs/style/react-tabs.css";
 import ProductsCard from "./Products";
 
 const ShopByCategory = () => {
+  
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState("Animal Toys");
+  const [selectedCategory, setSelectedCategory] = useState("Animals Toy");
   const [filteredProducts, setFilteredProducts] = useState([]);
 
   // console.log(products, categories, selectedCategory, filteredProducts);
@@ -16,7 +17,7 @@ const ShopByCategory = () => {
     fetch("http://localhost:1500/toyproduct")
       .then((res) => res.json())
       .then((data) => setProducts(data));
-  }, [filteredProducts]);
+  }, []);
   // console.log(products, data)
 
   useEffect(() => {
@@ -25,7 +26,7 @@ const ShopByCategory = () => {
       ...new Set(products.map((product) => product.category)),
     ];
     setCategories(uniqueCategories);
-  }, [products]);
+  }, []);
 
   useEffect(() => {
     // Filter products based on the selected category

@@ -5,15 +5,14 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_APIKEY,
-  authDomain: import.meta.env.VITE_AUTHDOMAIN,
-  projectId: import.meta.env.VITE_PROJECTID,
-  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
-  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
-  appId: import.meta.env.VITE_APPID
+  apiKey: "AIzaSyAkNwCZmDo_YFcqJwmaf6tVKTuYNcnVpOc",
+  authDomain: "playtimee-paradise.firebaseapp.com",
+  projectId: "playtimee-paradise",
+  storageBucket: "playtimee-paradise.appspot.com",
+  messagingSenderId: "762589718930",
+  appId: "1:762589718930:web:9ff85ae2882a6cca3c794b"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
 export default app;

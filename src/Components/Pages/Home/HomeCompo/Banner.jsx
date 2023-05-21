@@ -13,7 +13,7 @@ const Banner = () => {
             <h2 className="text-7xl font-extrabold ">
                 HAVE FUN!!
             </h2>
-            <p className="text-2xl ">Let your imagination soar as you embark on a journey through our magical aisles. Experience the thrill of discovering the perfect toy that will light up your little one's eyes and create cherished memories that will last a lifetime.</p>
+            <p className="text-2xl ">Let your imagination soar as you embark on a journey through our magical aisles. Experience the thrill of discovering the perfect.</p>
           </span>
         </div>
         <div id="item2" className="carousel-item w-full bg-gradient-to-r from-cyan-300 to-blue-100 ">

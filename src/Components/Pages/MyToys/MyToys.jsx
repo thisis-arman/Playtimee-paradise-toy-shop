@@ -3,16 +3,10 @@ import useTitle from "../../Hook/useTitle";
 import { AuthContext } from "../../Provider/AuthProvider";
 import MyToy from "./MyToy";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const MyToys = () => {
-  /*  const {user} =useContext(AuthContext)
-    const url =`https://playtime-paradise.vercel.app/toyproduct?email=${user?.email}`
-    useEffect(()=>{
-      fetch(url)
-      .then(res=>res.json())
-      .then(data => console.log(data))
 
-    },[user,url]) */
 
   const [myToys, setMyToys] = useState([]);
   const { user } = useContext(AuthContext);
@@ -20,7 +14,7 @@ const MyToys = () => {
   useTitle("My Toys");
 
   useEffect(() => {
-    fetch(`https://playtime-paradise.vercel.app/mytoys?email=${user?.email}&&sort=${sortOrder}`)
+    fetch(`http://localhost:5000/mytoys?email=${user?.email}&sort=${sortOrder}`)
       .then((res) => res.json())
       .then((data) => {
         setMyToys(data);
@@ -54,7 +48,7 @@ const MyToys = () => {
     }); 
   };
 const handleUpdateProduct=(id)=>{
-  fetch(`https://playtime-paradise.vercel.app/mytoys/${id}`,{
+  fetch(`http://localhost:5000/mytoys/${id}`,{
     method:'PATCH',
     headers:{
       'Content-Type':'application/json',
@@ -69,7 +63,8 @@ const handleUpdateProduct=(id)=>{
 
 
   const handleSortOrderChange = (e) => {
-    setSortOrder(e.target.innerText);
+    console.log(e.target.value);
+    setSortOrder(e.target.value)
   };
 
   useTitle("My Toys");
@@ -117,10 +112,10 @@ const handleUpdateProduct=(id)=>{
                   <th>{1+i}</th>
                   <td>{toy.title}</td>
                   <td>{toy.category}</td>
-                  <td onChange={handleSortOrderChange}>$ {parseFloat(toy?.price)}</td> 
+                  <td onChange={handleSortOrderChange}>$ {toy?.price}</td> 
                   <td>{toy?.quantity}</td>
                   <td>
-                    <button onClick={()=>handleUpdateProduct(toy?._id)} className="btn btn-xs btn-ghost">Update</button>
+                    <Link to={`/update/${toy._id}`} className="btn btn-xs btn-ghost">Update</Link>
                   </td>
                   <td>
                     <button onClick={()=>handleDelete(toy._id)} className="btn btn-xs btn-warning">Delete</button>

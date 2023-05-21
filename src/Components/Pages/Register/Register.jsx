@@ -46,7 +46,7 @@ const Register = () => {
       });
     
     updateProfile(user,{
-      displayName:name, 
+      displayName:user.name, 
       photoURL :photo,
     })
       .then(() =>console.log('updated') )

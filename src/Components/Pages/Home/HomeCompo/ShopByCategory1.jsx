@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const ShopByCategory1 = () => {
   const [category, setCategory] = useState([]);
   useEffect(() => {
-    fetch("https://playtime-paradise.vercel.app/allCollection")
+    fetch("http://localhost:5000/allCollection")
       .then((res) => res.json())
       .then((data) => setCategory(data));
   }, []);

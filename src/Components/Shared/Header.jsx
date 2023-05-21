@@ -119,7 +119,7 @@ const Header = () => {
             </Link>
           {/* </div> */}
           {/* <div className="flex gap-1 hover:text-blue-400"> */}
-            <Link className="mr-12 text-xl flex gap-1 hover:text-blue-400  " to="/blog">
+            <Link className="mr-12 hidden text-xl md:flex gap-1 hover:text-blue-400  " to="/blog">
             <RiFileListLine className="h-6 w-6" />
               Categories
             </Link>

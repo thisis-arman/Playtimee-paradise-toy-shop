@@ -14,7 +14,7 @@ const ShopByCategory = () => {
   // console.log(products, categories, selectedCategory, filteredProducts);
 
   useEffect(() => {
-    fetch("https://playtime-paradise.vercel.app/toyproduct")
+    fetch("http://localhost:5000/toyproduct")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);

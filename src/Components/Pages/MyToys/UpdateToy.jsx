@@ -1,52 +1,46 @@
-import React from "react";
+import React, { useEffect } from 'react';
+import { useLoaderData } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import useTitle from "../../Hook/useTitle";
 import Swal from "sweetalert2";
 
-const AddToy = () => {
-    useTitle('Add product');
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm(); 
-  const onSubmit = (data) =>{ 
-    data.price =parseFloat(data.price);
-    console.log(data)
-    fetch('http://localhost:5000/toyproduct',{
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    })
-    .then(res=>res.json())
-    .then(data =>{
+const UpdateToy = () => {
+    const mytoys = useLoaderData()
+    console.log(mytoys)
 
-      console.log(data)
-      if(data.insertedId){
-        Swal.fire({
-          title: 'Success!',
-          text: 'Product Added Successfully!',
-          icon: 'success',
-          confirmButtonText: 'Cool'
-        })
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+      } = useForm(); 
+      const onSubmit = (data) =>{ 
+        console.log(data)
       }
-    }
-    )
-      
-  }
-  console.log(errors);
- 
 
-  return (
-    <div className="md:p-20 flex mx-auto shadow-2xl bg-base-200 my-4  border">
+      const handleUpdateProduct=(id)=>{
+        console.log(id)
+        fetch(`http://localhost:5000/mytoys/${id}`,{
+          method:'PATCH',
+          headers:{
+            'Content-Type':'application/json', 
+          },
+          body:JSON.stringify({status:updated})
+        })
+        /* .then(res=>res.json())
+        .then(data => console.log(data)) */
+      
+      }
+    
+    return (
+        <div>
+           <div className="md:p-20 flex mx-auto shadow-2xl bg-base-200 my-4  border">
       <div className="flex mx-auto">
       <form onSubmit={handleSubmit(onSubmit)}>
-      <h2 className="text-3xl font-bold mb-8 text-center ">ADD NEW PRODUCT__</h2>
+      <h2 className="text-3xl font-bold mb-8 text-center ">UPDATE PRODUCT__</h2>
 <div className="md:flex justify-between my-4 gap-5">
 <label >Title
         <input 
+        defaultValue={mytoys?.title}
         className="pr-20 pl-4 py-2 bg-gray-200 block"
         type="text" 
         placeholder="Title" 
@@ -54,6 +48,7 @@ const AddToy = () => {
 </label>
 <label htmlFor="">Seller Name
         <input
+        defaultValue={mytoys?.sellerName}
         className="pr-20 pl-4 py-2 bg-gray-200 block"
           type="text"
           placeholder="Seller Name"
@@ -66,6 +61,7 @@ const AddToy = () => {
      <div className="md:flex justify-between my-4 gap-5">
      <label htmlFor="">Seller Email
         <input
+        defaultValue={mytoys?.sellerEmail}
         className="pr-20 pl-4 py-2 bg-gray-200 block"
           type="email"
           placeholder="Seller Email"
@@ -73,14 +69,14 @@ const AddToy = () => {
         />
         </label>
 <label htmlFor="">Price   
-   <input className="pr-20 pl-4 py-2 bg-gray-200 block" type="number" placeholder="Price" {...register("price", {})} />
+   <input defaultValue={mytoys?.price} className="pr-20 pl-4 py-2 bg-gray-200 block" type="number" placeholder="Price" {...register("price", {})} />
    </label>
      </div>
   
 
 <div className="md:flex justify-between my-4 gap-5">
 <label htmlFor="">category
-        <select className="pr-20 pl-4 py-2 bg-gray-200  block" {...register("category")}>
+        <select defaultValue={mytoys?.category} className="pr-20 pl-4 py-2 bg-gray-200  block" {...register("category")}>
           <option value="Animal Toys">Animal Toys</option>
           <option value="Plush Toys">Plush Toys</option>
           <option value="Mythical Creatures">Mythical Creatures</option>
@@ -91,6 +87,7 @@ const AddToy = () => {
 
         <label htmlFor="">Quantity
         <input
+        defaultValue={mytoys?.quantity}
         className="pr-20 pl-4 py-2 bg-gray-200 block"
           type="number"
           placeholder="Quanity"
@@ -102,10 +99,13 @@ const AddToy = () => {
        
        <div className="md:flex justify-between my-4 gap-5">
        <label htmlFor="">Description 
-        <textarea className="pr-20 pl-4 py-2 bg-gray-200 block" {...register("description", {})} />
+        <textarea 
+        defaultValue={mytoys?.description}
+        className="pr-20 pl-4 py-2 bg-gray-200 block" {...register("description", {})} />
         </label>
        <label htmlFor="">Image
         <input
+        defaultValue={mytoys?.imageUrl}
         className="pr-20 pl-4 py-2 bg-gray-200 block"
           type="text"
           placeholder="Image Url"
@@ -116,13 +116,13 @@ const AddToy = () => {
        </div>
 
         <div className="flex justify-center ">
-        <input className="btn btn-accent my-4 w-full" type="submit" value='Add Product' />
+        <input onClick={()=>handleUpdateProduct(mytoys?._id)} className="btn btn-accent my-4 w-full" type="submit" value='Update Product' />
         </div>
       </form>
       </div>
     </div>
-  );
-
+        </div>
+    );
 };
 
-export default AddToy;
+export default UpdateToy;

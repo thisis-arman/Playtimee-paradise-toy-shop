@@ -7,6 +7,7 @@ import { createUserWithEmailAndPassword, getAuth, updateProfile } from "firebase
 import app from "../../../Firebase/Firebase.config";
 
 const Register = () => {
+  const {user} =useContext(AuthContext)
   useTitle('Sign Up')
   const navigate= useNavigate()
   // const {  updateUserProfile } = useContext(AuthContext);
@@ -30,6 +31,7 @@ const Register = () => {
       .then((result) => {
         const createdUser = result.user;
         console.log(createdUser);
+        navigate('/')
         if (createdUser) {
           Swal.fire({
             title: "Done!",
@@ -38,7 +40,6 @@ const Register = () => {
             confirmButtonText: "Cool",
           });
         }
-        navigate('/')
       })
       .catch((error) => {
         console.log(error);
@@ -46,7 +47,7 @@ const Register = () => {
       });
     
     updateProfile(user,{
-      displayName:user.name, 
+      displayName:name, 
       photoURL :photo,
     })
       .then(() =>console.log('updated') )

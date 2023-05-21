@@ -19,7 +19,7 @@ const UpdateToy = () => {
 
       const handleUpdateProduct=(id)=>{
         console.log(id)
-        fetch(`http://localhost:5000/mytoys/${id}`,{
+        fetch(`https://playtime-paradise.vercel.app/mytoys/${id}`,{
           method:'PATCH',
           headers:{
             'Content-Type':'application/json', 

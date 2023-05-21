@@ -14,7 +14,7 @@ const MyToys = () => {
   useTitle("My Toys");
 
   useEffect(() => {
-    fetch(`http://localhost:5000/mytoys?email=${user?.email}&sort=${sortOrder}`)
+    fetch(`https://playtime-paradise.vercel.app/mytoys?email=${user?.email}&sort=${sortOrder}`)
       .then((res) => res.json())
       .then((data) => {
         setMyToys(data);
@@ -33,7 +33,7 @@ const MyToys = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/mytoys/${id}`, {
+        fetch(`https://playtime-paradise.vercel.app/mytoys/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -48,7 +48,7 @@ const MyToys = () => {
     }); 
   };
 const handleUpdateProduct=(id)=>{
-  fetch(`http://localhost:5000/mytoys/${id}`,{
+  fetch(`https://playtime-paradise.vercel.app/mytoys/${id}`,{
     method:'PATCH',
     headers:{
       'Content-Type':'application/json',

@@ -13,7 +13,7 @@ const AddToy = () => {
   const onSubmit = (data) =>{ 
     data.price =parseFloat(data.price);
     console.log(data)
-    fetch('http://localhost:5000/toyproduct',{
+    fetch('https://playtime-paradise.vercel.app/toyproduct',{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

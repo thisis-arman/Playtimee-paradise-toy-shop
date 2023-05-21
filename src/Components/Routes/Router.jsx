@@ -14,62 +14,69 @@ import ToyDetail from "../Pages/AllToys/ToyDetail";
 import PrivateRoute from "./PrivateRoute";
 import UpdateToy from "../Pages/MyToys/UpdateToy";
 
-
 const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Main/>,
-    //   errorElement:<ErrorPage/>,
-      children:[
-        {
-            path:'/',
-            element:<Home/>,
-        },
-        {
-            path:'/products/:id',
-            element:<PrivateRoute><ProductDetails/></PrivateRoute>,
-            loader:({params})=>fetch(`http://localhost:5000/toyproduct/${params.id}`)
-        
+  {
+    path: "/",
+    element: <Main />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/products/:id",
+        element: (
+          <PrivateRoute>
+            <ProductDetails />
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`https://playtime-paradise.vercel.app/toyproduct/${params.id}`),
+      },
+      {
+        path: "/shop/toy/:id",
+        element: (
+          <PrivateRoute>
+            <ToyDetail />
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`https://playtime-paradise.vercel.app/toyproduct/${params.id}`),
+      },
+      {
+        path: "/shop",
+        element: <AllToy />,
+        loader: () => fetch("https://playtime-paradise.vercel.app/toyproduct"),
+      },
+      {
+        path: "/update/:id",
+        element: <UpdateToy />,
+        loader: ({ params }) =>
+          fetch(`https://playtime-paradise.vercel.app/mytoys/${params.id}`),
+      },
+      {
+        path: "/blog",
+        element: <Blogs />,
+      },
+      {
+        path: "/create",
+        element: <AddToy />,
+      },
+      {
+        path: "/mytoys",
+        element: <MyToys />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "register",
+        element: <Register />,
+      },
+    ],
+  },
+]);
 
-        },
-        {
-            path:'/shop/toy/:id',
-            element:<PrivateRoute><ToyDetail/></PrivateRoute>,
-            loader:({params})=>fetch(`http://localhost:5000/toyproduct/${params.id}`)
-        },
-        {
-            path:'/shop',
-            element:<AllToy/>,
-            loader:()=>fetch('http://localhost:5000/toyproduct')
-        },
-        {
-            path:'/update/:id',
-            element:<UpdateToy/>,
-            loader:({params})=>fetch(`http://localhost:5000/mytoys/${params.id}`) 
-        },
-        {
-            path:'/blog',
-            element:<Blogs/>
-        },
-        {
-            path:'/create',
-            element:<AddToy/>
-        },
-        {
-            path:'/mytoys',
-            element:<MyToys/>
-        },
-        {
-            path:'/login',
-            element:<Login/>
-        },
-        {
-            path:'register',
-            element:<Register/>
-        }
-      ]
-    },
-  ]);
-
-
-  export default router
+export default router;
